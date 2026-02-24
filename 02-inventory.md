@@ -12,4 +12,4 @@ There are 2 types:
    - YAML files
   
 Adhoc command:
-  'ansible -i inventory.ini -m ping all'  (all - indicates all the servers)
+  `ansible -i inventory.ini -m ping all`  (all - indicates all the servers)
