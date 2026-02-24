@@ -13,3 +13,17 @@ There are 2 types:
   
 Adhoc command:
   `ansible -i inventory.ini -m ping all`  (all - indicates all the servers)
+
+
+## Grouping Servers
+
+[web]
+ubuntu@<PUBLIC-IP>
+
+[db]
+ubuntu@<PUBLIC-IP>
+
+Adhoc command:
+   `ansible -i inventory.ini -m ping  web`  (run only on servers under web)
+
+   `ansible -i inventory.ini -m ping db`    (run only on servers under db)
