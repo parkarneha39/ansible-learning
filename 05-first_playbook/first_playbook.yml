@@ -2,7 +2,10 @@
 - hosts: all                                          #run the playbook on all servers mentioned in inventory.ini file
   become: true                                        #run with root user
   tasks:
-    - name: Install apache httpd                      #copied from Ansible documentation
+    - name: Update apt cache                          #production best practise, to update cache on VM
+      ansible.builtin.apt:        
+        update_cache: yes
+    - name: Install apache                            #copied from Ansible documentation
       ansible.builtin.apt:
         name: apache2
         state: present                                #present = install, absent = uninstall
