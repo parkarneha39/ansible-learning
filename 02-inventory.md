@@ -6,7 +6,7 @@ There are 2 types:
 
 ## 1. Inventory.ini
    - etc/ansible/hosts (default location)
-   - ubuntu@<PUBLIC-IP> (store the servers in this format)
+   - ubuntu@PUBLIC-IP (store the servers in this format)
 
 ## 2. Inventory
    - YAML files
@@ -18,10 +18,12 @@ Adhoc command:
 ## Grouping Servers
 
 [web]
-ubuntu@<PUBLIC-IP>
+
+- ubuntu@PUBLIC-IP
 
 [db]
-ubuntu@<PUBLIC-IP>
+
+- ubuntu@PUBLIC-IP
 
 Adhoc command:
    `ansible -i inventory.ini -m ping  web`  (run only on servers under web)
