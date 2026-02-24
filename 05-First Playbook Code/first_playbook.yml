@@ -1,0 +1,18 @@
+---
+- hosts: all                                          #run the playbook on all servers mentioned in inventory.ini file
+  become: true                                        #run with root user
+  tasks:
+    - name: Update apt cache                          #production best practise, to update cache on VM
+      ansible.builtin.apt:        
+        update_cache: yes
+    - name: Install apache                            #copied from Ansible documentation, look for apt module
+      ansible.builtin.apt:
+        name: apache2
+        state: present                                #present = install, absent = uninstall
+    - name: Copy file with owner and permissions      #copied from Ansible documentation, look for copy module
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html                 #mention the location where you want to place your index.html file on VM
+        owner: root
+        group: root
+        mode: '0644'
