@@ -26,6 +26,8 @@ Adhoc command:
 - ubuntu@PUBLIC-IP
 
 Adhoc command:
+
    `ansible -i inventory.ini -m ping  web`  (run only on servers under web)
+   
 
    `ansible -i inventory.ini -m ping db`    (run only on servers under db)
