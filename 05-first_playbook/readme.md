@@ -1,4 +1,5 @@
 ## Steps to write first playbook.
+## Install Apache2 server and deploy static app on AWS EC2 instance
 
 1. Create first_playbook.yml file
 2. Create index.html file
