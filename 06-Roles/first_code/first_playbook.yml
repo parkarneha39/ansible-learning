@@ -3,3 +3,4 @@
   become: true                                        #run with root user
   roles:
     - httpd
+    - bsmeding.docker
